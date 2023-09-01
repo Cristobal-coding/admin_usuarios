@@ -32,8 +32,8 @@ public class UsuarioController {
         }
     };
 
-    @GetMapping("/usuarios/:email")
-    public ResponseEntity<Usuario> findUsuario(@RequestParam String email){
+    @GetMapping("/usuarios/{email}")
+    public ResponseEntity<Usuario> findUsuario(@PathVariable String email){
         try{
             Usuario usuario = usuarioService.findUsuario(email);
             return ResponseEntity.ok(usuario);
